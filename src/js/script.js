@@ -221,4 +221,50 @@ window.addEventListener('DOMContentLoaded', () => {
         '.menu .menu__field .container',
         //'menu__item'
     ).render();
+
+    ////////////////////////// ОТПРАВКА ДАННЫХ НА СЕРВЕР /////////////////////////////
+    const forms = document.querySelectorAll('form');
+    const message = {
+        loading: 'Загрузка',
+        success: 'Спасибо, скоро мы с вами свяжемся',
+        failure: 'Что-то пошло не так...'
+    };
+
+    forms.forEach(item => {
+        postData(item);
+    });
+
+    function postData(form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            statusMessage.textContent = message.loading;
+            form.append(statusMessage);
+
+            const request = new XMLHttpRequest();
+            request.open('POST', 'server.php');
+
+            //request.setRequestHeader('Content-type', 'multipart/form-data');
+            // Когда мы используем связку XMLHttpRequest() и form-data, то setRequestHeader(заголовок)
+            // устанавливать не нужно (устанавливается автоматически)
+            const formData = new FormData(form);
+
+            request.send(formData);
+
+            request.addEventListener('load', () => {
+                if(request.status === 200) {
+                    console.log(request.response);
+                    statusMessage.textContent = message.success;
+                    form.reset();
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 2000);
+                } else {
+                    statusMessage.textContent = message.failure;
+                }
+            })
+        })
+    }
 });
