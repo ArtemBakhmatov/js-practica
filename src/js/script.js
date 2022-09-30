@@ -246,12 +246,17 @@ window.addEventListener('DOMContentLoaded', () => {
             const request = new XMLHttpRequest();
             request.open('POST', 'server.php');
 
-            //request.setRequestHeader('Content-type', 'multipart/form-data');
-            // Когда мы используем связку XMLHttpRequest() и form-data, то setRequestHeader(заголовок)
-            // устанавливать не нужно (устанавливается автоматически)
+            request.setRequestHeader('Content-type', 'application/json');
             const formData = new FormData(form);
 
-            request.send(formData);
+            const object = {};
+            formData.forEach((value, key) => {
+                object[key] = value;
+            });
+
+            const json = JSON.stringify(object);
+
+            request.send(json);
 
             request.addEventListener('load', () => {
                 if(request.status === 200) {
