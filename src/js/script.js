@@ -305,4 +305,8 @@ window.addEventListener('DOMContentLoaded', () => {
     })
     .then(response => response.json()) // response -> ответ в json // response.json()) -> переводит в объект
     .then(json => console.log(json));  // объект выводится в консоли
+
+    fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res));
 });
