@@ -129,4 +129,4 @@ function slider() {
     });
 }
 
-module.exports = slider;
+export {slider};

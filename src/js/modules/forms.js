@@ -109,4 +109,4 @@ function forms() {
     }
 }
 
-module.exports = forms;
+export {forms};

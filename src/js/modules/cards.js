@@ -79,4 +79,4 @@ function cards() {
  */
 }
 
-module.exports = cards;
+export {cards};
