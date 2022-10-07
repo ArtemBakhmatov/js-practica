@@ -1,8 +1,8 @@
-function tabs() {
+function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass) {
     ////////////////////////// ТАБЫ /////////////////////////////
-    const tabs = document.querySelectorAll('.tabheader__item'),       // все табы 
-          tabsContent = document.querySelectorAll('.tabcontent'),     // весь контент
-          tabsWrapper = document.querySelector('.tabheader__items');  // обёртка всех табов
+    const tabs = document.querySelectorAll(tabsSelector),                   // все табы 
+          tabsContent = document.querySelectorAll(tabsContentSelector),     // весь контент
+          tabsWrapper = document.querySelector(tabsParentSelector);         // обёртка всех табов
 
     function hideTabContent() {
         tabsContent.forEach(item => {
@@ -10,21 +10,21 @@ function tabs() {
             item.classList.remove('show', 'fade');
         });
         tabs.forEach(item => {
-            item.classList.remove('tabheader__item_active');
+            item.classList.remove(activeClass);
         });
     }
 
     function showTabContent(i = 0) {
         tabsContent[i].classList.add('show', 'fade');
         tabsContent[i].classList.remove('hide');
-        tabs[i].classList.add('tabheader__item_active');
+        tabs[i].classList.add(activeClass);
     }
     hideTabContent();
     showTabContent();
 
     tabsWrapper.addEventListener('click', (event) => {
         const target = event.target;
-        if(target && target.classList.contains('tabheader__item')) {
+        if(target && target.classList.contains(tabsSelector.slice(1))) {
             tabs.forEach((item, i) => {
                 if(target == item) {
                     hideTabContent();

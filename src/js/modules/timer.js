@@ -1,6 +1,4 @@
-function timer()  {
-    ////////////////////////// ТАЙМЕР /////////////////////////////
-    const deadline = '2022-10-13';  // время в будущем
+function timer(id, deadline)  {
 
     function getTimerRemaining(endtime) { // получить оставшийся таймер (разница между deadline и наст. время)
         let days, hours, minutes, seconds;
@@ -59,7 +57,7 @@ function timer()  {
         }
     }
 
-    setClock('.timer', deadline);
+    setClock(id, deadline);
 }
 
 export {timer};

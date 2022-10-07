@@ -1,5 +1,4 @@
 function slider() {
-    ////////////////////////// СЛАЙДЕР (карусель) /////////////////////////////
     
     const slides = document.querySelectorAll('.offer__slide'),      // все слайды
           slider = document.querySelector('.offer__slider'),        // один слайд
@@ -7,9 +6,9 @@ function slider() {
             next = document.querySelector('.offer__slider-next'),   // стрелка вперед
            total = document.querySelector('#total'),
          current = document.querySelector('#current'),
-   slidesWrapper = document.querySelector('.offer__slider-wrapper'),// обертка всех слайдов
-     slidesField = document.querySelector('.offer__slider-inner'),  // горез-е поле для слайдов
-           width = window.getComputedStyle(slidesWrapper).width;    // ширина обертки
+   slidesWrapper = document.querySelector('.offer__slider-wrapper'), // обертка всех слайдов
+     slidesField = document.querySelector('.offer__slider-inner'),   // горез-е поле для слайдов
+           width = window.getComputedStyle(slidesWrapper).width;     // ширина обертки
     let slideIndex = 1;
     let offset = 0;
 

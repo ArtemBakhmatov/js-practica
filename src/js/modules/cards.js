@@ -40,11 +40,11 @@ function cards() {
 
     const getResourse = async (url) => {  // async -> асинхронный код
         const res = await fetch(url);
-
+    
         if(!res.ok) {
             throw new Error(`Could not fetch ${url}, status: ${res.status}`);
         }
-
+    
         return await res.json(); 
     };
 

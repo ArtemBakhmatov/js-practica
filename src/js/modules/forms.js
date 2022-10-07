@@ -1,6 +1,9 @@
-function forms() {
+import {openModal, closeModal} from './modal';
+import {postData} from '../services/services';
+
+function forms(formSelector, modalTimerId) {
     ////////////////////////// ОТПРАВКА ДАННЫХ НА СЕРВЕР /////////////////////////////
-    const forms = document.querySelectorAll('form');
+    const forms = document.querySelectorAll(formSelector);
     const message = {
         loading: 'icons/spinner.svg',
         success: 'Спасибо, скоро мы с вами свяжемся',
@@ -10,17 +13,6 @@ function forms() {
     forms.forEach(item => {
         bindPostData(item);
     });
-
-    const postData = async (url, data) => {  // async -> асинхронный код
-        const res = await fetch(url, {       // await -> дождаться результата этого запроса
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: data
-        });
-        return await res.json(); 
-    };
 
     function bindPostData(form) {
         form.addEventListener('submit', (event) => {
@@ -57,7 +49,7 @@ function forms() {
         const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
-        openModal();
+        openModal('.modal', modalTimerId);
 
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
@@ -74,7 +66,7 @@ function forms() {
             thanksModal.remove();
             prevModalDialog.classList.add('show');
             prevModalDialog.classList.remove('hide');
-            closeModal();
+            closeModal('.modal');
         }, 4000);
     }
 
@@ -91,22 +83,6 @@ function forms() {
     fetch('http://localhost:3000/menu')
         .then(data => data.json())
         .then(res => console.log(res));
-
-    ////////////// МОДАЛЬНОЕ ОКНО (cкопировали из файла modal.js) /////////////////
-    const modal = document.querySelector('.modal');           // модальное окно
-
-    function openModal() {
-        modal.classList.add('show');
-        modal.classList.remove('hide');
-        document.body.style.overflow = 'hidden';
-        //clearInterval(modalTimerId);
-    }
-
-    function closeModal() {
-        modal.classList.add('hide');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
 }
 
 export {forms};
