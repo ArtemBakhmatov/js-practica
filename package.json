@@ -16,7 +16,13 @@
     "url": "https://github.com/ArtemBakhmatov/js-practica/issues"
   },
   "homepage": "https://github.com/ArtemBakhmatov/js-practica#readme",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
   "devDependencies": {
+    "@babel/preset-env": "^7.19.3",
+    "babel-loader": "^8.2.5",
     "json-server": "^0.17.0",
     "webpack-cli": "^4.10.0"
   }
