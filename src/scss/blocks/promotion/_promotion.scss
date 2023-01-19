@@ -56,3 +56,102 @@
         }
     }
 }
+
+@media (max-width: 1400px) {
+    .promotion {
+        padding: 70px 0 200px 0;
+        &__text {
+            margin-left: 5px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .promotion {
+        padding: 70px 0 150px 0;
+        .title {
+            font-size: 34px;
+        }
+        &__timer {
+            .timer {
+                padding-left: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .promotion {
+        padding: 50px 0 100px 0;
+        .container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 28px;
+        }
+        &__text {
+            margin-left: 0;
+            width: 70%;
+        }
+        &__descr {
+            text-align: justify;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        &__timer {
+            width: 70%;
+            margin-top: 20px;
+            .timer {
+                margin-top: 40px;
+                padding-left: 0;
+                &__block {
+                    width: 90px;
+                    height: 90px;
+                    span {
+                        display: block;
+                        margin-top: 3px;
+                        margin-bottom: -4px;
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .promotion {
+        .title {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .promotion {
+        padding: 50px 0 50px 0;
+        .title {
+            text-align: center;
+        }
+        &__text {
+            width: 100%;
+            padding: 0 5px;
+        }
+        &__timer {
+            width: 100%;
+            padding: 0 5px;
+            .timer {
+                margin-top: 30px;
+                
+                &__block {
+                    width: 75px;
+                    height: 75px;
+                    span {
+                        font-size: 45px;
+                    }
+                }
+            }
+        }
+    }
+}

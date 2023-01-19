@@ -66,3 +66,29 @@
 .hide {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .modal {
+        &__dialog {
+            max-width: 300px;
+            margin: 30px auto;
+        }
+        &__content {
+            padding: 20px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__input {
+            width: 250px;
+        }
+        &__close {
+            top: -5px;
+            right: 5px;
+            font-size: 35px;
+        }
+        .btn {
+            width: 250px;
+        }
+    }
+}

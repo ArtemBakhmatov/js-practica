@@ -73,3 +73,114 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .container {
+        width: 960px;
+    }
+    .tabcontainer {
+        width: 960px;
+    }
+    .tabcontent {
+        width: 680px;
+        &__descr {
+            padding: 20px;
+            width: 525px;
+            height: 220px;
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 720px;
+    }
+    .tabcontainer {
+        width: 720px;
+    }
+    .tabheader {
+        width: 215px;
+        padding: 20px 10px;
+    }
+    .tabcontent {
+        width: 505px;
+        &__descr {
+            top: 225px;
+            padding: 15px;
+            width: 395px;
+            height: 180px;
+            font-size: 18px;
+            line-height: 25px;
+
+        }
+    }
+    .preview {
+        &__life {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 540px;
+    }
+    .tabcontainer {
+        width: 540px;
+    }
+    .tabheader {
+        width: 180px;
+        h3 {
+            font-size: 14px;
+            text-align: center;
+        }
+        &__item {
+            font-size: 15px;
+            margin-top: 8px;
+        }
+        &__items {
+            margin-top: 25px;
+            padding-left: 12px;
+        }
+    }
+    .tabcontent {
+        width: 360px;
+        &__descr {
+            top: 184px;
+            padding: 10px;
+            width: 360px;
+            height: 130px;
+            font-size: 15px;
+            line-height: 19px;
+        }
+    }
+    .preview__life {
+        font-size: 16px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+    }
+    .tabcontainer {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .tabheader {
+        width: 100%;
+    }
+    .tabcontent {
+        width: 100%;
+        &__descr {
+            right: 0px;
+            top: 75px;
+            width: 290px;
+            height: 150px;
+        }
+    }
+}

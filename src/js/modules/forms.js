@@ -70,7 +70,7 @@ function forms(formSelector, modalTimerId) {
         }, 4000);
     }
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    /* fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',                         // метод
         body: JSON.stringify({name: 'Alex'}),   // что отправляем
         Headers: {                              // заголовок
@@ -82,7 +82,7 @@ function forms(formSelector, modalTimerId) {
 
     fetch('http://localhost:3000/menu')
         .then(data => data.json())
-        .then(res => console.log(res));
+        .then(res => console.log(res)); */
 }
 
 export {forms};

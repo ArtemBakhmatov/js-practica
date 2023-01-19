@@ -25,3 +25,55 @@
         outline: none;
     }
 }
+
+@media (max-width: 1200px) {
+    .order {
+        .title {
+            font-size: 34px;
+        }
+        &__form {
+            padding: 0px 0px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .order {
+        .title {
+            font-size: 28px;
+        }
+        &__form {
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            img {
+                display: none;
+            }
+        }
+        &__input {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .order {
+        padding-bottom: 50px;
+        .title {
+            font-size: 25px;
+        }
+        &__input {
+            width: 250px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .order {
+        &__form {
+            button {
+                width: 250px;
+            }
+        }
+    }
+}

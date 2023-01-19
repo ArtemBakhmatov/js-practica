@@ -3,7 +3,7 @@
 let path = require('path');
 
 module.exports = {
-  mode: 'development',            // режим 'разработка'
+  mode: 'production',             // режим 'сжатый'
   entry: './src/js/script.js',    // откуда собираем 
   output: {
     filename: 'bundle.js',        // создается новый файл
